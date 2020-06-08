@@ -1,11 +1,11 @@
 import Head from "next/head";
+import React from "react";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 
-import { orange, amber } from "@material-ui/core/colors";
+import { orange } from "@material-ui/core/colors";
 import Navbar from "./../components/Navbar";
 import {
   BannerImage,
-  BannerText,
   GlobalStyle,
   StyledTypography,
 } from "../components/styles";
@@ -14,7 +14,6 @@ import FlipImage from "../components/FlipImage";
 const theme = createMuiTheme({
   palette: {
     primary: orange,
-    secondary: amber,
   },
 });
 
