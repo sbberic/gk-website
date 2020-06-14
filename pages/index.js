@@ -1,19 +1,35 @@
+import {
+  createMuiTheme,
+  ThemeProvider as MuiThemeProvider,
+} from "@material-ui/core/styles";
 import Head from "next/head";
 import React from "react";
-import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
-
-import { orange } from "@material-ui/core/colors";
-import Navbar from "./../components/Navbar";
+import { ThemeProvider } from "styled-components";
+import FlipImage from "../components/FlipImage";
+import ProgramCard from "../components/ProgramCard";
 import {
   BannerImage,
   GlobalStyle,
   StyledTypography,
 } from "../components/styles";
-import FlipImage from "../components/FlipImage";
+import Testimonial from "../components/Testimonial";
+import { feedbacks, mindset, programs } from "../data/data";
+import Navbar from "./../components/Navbar";
 
 const theme = createMuiTheme({
   palette: {
-    primary: orange,
+    primary: {
+      light: "#ffb145",
+      main: "#fd8006",
+      dark: "#c35100",
+      contrastText: "#fff",
+    },
+    secondary: {
+      light: "#ff6659",
+      main: "#d32f2f",
+      dark: "#9a0007",
+      contrastText: "#ffffff",
+    },
   },
 });
 
@@ -21,51 +37,49 @@ export default function Home() {
   return (
     <div className="container">
       <GlobalStyle />
-      <ThemeProvider theme={theme}>
-        <Head>
-          <title>Create Next App</title>
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
-        <Navbar />
-        <BannerImage img="/banner.jpg">
-          <StyledTypography variant="h2">
-            REALIZE YOUR POTENTIAL
-            <br></br>
-            THROUGH EXPLORING THE WORLD
+      <MuiThemeProvider theme={theme}>
+        <ThemeProvider theme={theme}>
+          <Head>
+            <title>Create Next App</title>
+            <link rel="icon" href="/favicon.ico" />
+          </Head>
+          <Navbar />
+          <BannerImage img="/banner.jpg">
+            <StyledTypography variant="h2">
+              REALIZE YOUR POTENTIAL
+              <br></br>
+              THROUGH EXPLORING THE WORLD
+            </StyledTypography>
+          </BannerImage>
+          <StyledTypography variant="h3">
+            Reinventing the Learning Experience
           </StyledTypography>
-        </BannerImage>
-        <StyledTypography variant="h3">
-          Reinventing the Learning Experience
-        </StyledTypography>
-        <div style={{ height: "300px", width: "100%", display: "flex" }}>
-          <FlipImage
-            image="/banner.jpg"
-            frontText={
-              <StyledTypography variant="h4">Environment</StyledTypography>
-            }
-            backText="Combining classroom and experiential learning"
-          ></FlipImage>
-          <FlipImage
-            image="/banner.jpg"
-            frontText={
-              <StyledTypography variant="h4">Classmates</StyledTypography>
-            }
-            backText="Meet people from diverse backgrounds and cultures"
-          ></FlipImage>
-          <FlipImage
-            image="/banner.jpg"
-            frontText={<StyledTypography variant="h4">Goal</StyledTypography>}
-            backText="Curriculum that emphasizes growth mindset, problem solving and impact"
-          ></FlipImage>
-          <FlipImage
-            image="/banner.jpg"
-            frontText={
-              <StyledTypography variant="h4">Experience</StyledTypography>
-            }
-            backText="Immerse in real world activities, discussions and reflections"
-          ></FlipImage>
-        </div>
-      </ThemeProvider>
+          <div style={{ height: "300px", width: "100%", display: "flex" }}>
+            {mindset.map((m) => (
+              <FlipImage
+                key={m.title}
+                image={m.img}
+                frontText={
+                  <StyledTypography variant="h4">{m.title}</StyledTypography>
+                }
+                backText={m.description}
+              ></FlipImage>
+            ))}
+          </div>
+          <StyledTypography variant="h3">Featured Programs</StyledTypography>
+          <div style={{ width: "100%", display: "flex", flexWrap: "wrap" }}>
+            {programs.map((p) => (
+              <ProgramCard key={p.title} {...p}></ProgramCard>
+            ))}
+          </div>
+          <StyledTypography variant="h3">Customer Feedback</StyledTypography>
+          <div style={{ width: "100%", display: "flex", flexWrap: "wrap" }}>
+            {feedbacks.map((p) => (
+              <Testimonial key={p.title} {...p}></Testimonial>
+            ))}
+          </div>
+        </ThemeProvider>
+      </MuiThemeProvider>
     </div>
   );
 }

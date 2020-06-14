@@ -1,7 +1,7 @@
-import React from "react";
-import Link from "next/link";
 import Popover from "@material-ui/core/Popover";
-import MenuItem from "@material-ui/core/MenuItem";
+import Link from "next/link";
+import React from "react";
+import { StyledMenuItem } from "./styles";
 
 function LinkMenu({ list = [], target = null, handleClose = () => {} }) {
   return (
@@ -14,11 +14,11 @@ function LinkMenu({ list = [], target = null, handleClose = () => {} }) {
     >
       {list.map((l) => {
         return (
-          <MenuItem key={l.href}>
+          <StyledMenuItem key={l.href}>
             <Link href={l.href} passHref>
               {l.label}
             </Link>
-          </MenuItem>
+          </StyledMenuItem>
         );
       })}
     </Popover>

@@ -1,6 +1,8 @@
-import styled, { createGlobalStyle } from "styled-components";
+import Button from "@material-ui/core/Button";
+import MenuItem from "@material-ui/core/MenuItem";
+import { darken } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
-
+import styled, { createGlobalStyle } from "styled-components";
 export const GlobalStyle = createGlobalStyle`
   body {
     margin: 0px;
@@ -43,7 +45,10 @@ export const BackSide = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: orange;
+  ${({ theme }) => `
+    background-color: ${theme.palette.primary.main};
+    color: white;
+  `}
   div {
     text-align: center;
 
@@ -67,6 +72,32 @@ export const FlipImageContainer = styled.div`
     }
     ${BackSide} {
       transform: rotateY(0deg);
+    }
+  }
+`;
+
+export const StyledMenuItem = styled(MenuItem)`
+  ${({ theme }) => `
+    && {
+      color: white;
+      background-color: ${theme.palette.primary.main};
+      &:hover {
+        background-color: ${darken(theme.palette.primary.main, 0.1)};
+      }
+      a {
+        text-decoration: none;
+        color: white;
+      }
+    }
+  `}
+`;
+
+export const LinkButton = styled(Button)`
+  && {
+    color: white;
+    a {
+      text-decoration: none;
+      color: white;
     }
   }
 `;
