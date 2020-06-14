@@ -57,10 +57,18 @@ export const BackSide = styled.div`
   }
 `;
 
-export const StyledTypography = styled(Typography)`
+export const ImageTypography = styled(Typography)`
   text-align: center;
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.6);
+`;
+
+export const SectionHeader = styled(Typography)`
+  ${({ theme }) => `
+    && {
+      margin: ${theme.spacing() * 5}px 0px;
+    }
+  `}
 `;
 export const FlipImageContainer = styled.div`
   flex: 1;

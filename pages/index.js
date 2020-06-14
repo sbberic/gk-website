@@ -10,7 +10,8 @@ import ProgramCard from "../components/ProgramCard";
 import {
   BannerImage,
   GlobalStyle,
-  StyledTypography,
+  ImageTypography,
+  SectionHeader,
 } from "../components/styles";
 import Testimonial from "../components/Testimonial";
 import { feedbacks, mindset, programs } from "../data/data";
@@ -45,34 +46,38 @@ export default function Home() {
           </Head>
           <Navbar />
           <BannerImage img="/banner.jpg">
-            <StyledTypography variant="h2">
-              REALIZE YOUR POTENTIAL
+            <ImageTypography variant="h2">
+              Realize your potential
               <br></br>
-              THROUGH EXPLORING THE WORLD
-            </StyledTypography>
+              Through exploring the world
+            </ImageTypography>
           </BannerImage>
-          <StyledTypography variant="h3">
+          <SectionHeader variant="h3" align="center">
             Reinventing the Learning Experience
-          </StyledTypography>
+          </SectionHeader>
           <div style={{ height: "300px", width: "100%", display: "flex" }}>
             {mindset.map((m) => (
               <FlipImage
                 key={m.title}
                 image={m.img}
                 frontText={
-                  <StyledTypography variant="h4">{m.title}</StyledTypography>
+                  <ImageTypography variant="h4">{m.title}</ImageTypography>
                 }
                 backText={m.description}
               ></FlipImage>
             ))}
           </div>
-          <StyledTypography variant="h3">Featured Programs</StyledTypography>
+          <SectionHeader variant="h3" align="center">
+            Featured Programs
+          </SectionHeader>
           <div style={{ width: "100%", display: "flex", flexWrap: "wrap" }}>
             {programs.map((p) => (
               <ProgramCard key={p.title} {...p}></ProgramCard>
             ))}
           </div>
-          <StyledTypography variant="h3">Customer Feedback</StyledTypography>
+          <SectionHeader variant="h3" align="center">
+            Customer Feedback
+          </SectionHeader>
           <div style={{ width: "100%", display: "flex", flexWrap: "wrap" }}>
             {feedbacks.map((p) => (
               <Testimonial key={p.title} {...p}></Testimonial>
