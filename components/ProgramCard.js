@@ -9,7 +9,7 @@ import Link from "next/link";
 import React from "react";
 function ProgramCard({ img = "", title = "", description = "", href = "" }) {
   return (
-    <Card style={{ minWidth: 500, flex: 1, margin: 10 }} elevation={5}>
+    <Card style={{ minWidth: 400, flex: 1, margin: 10 }} elevation={5}>
       <Link href={href} passHref>
         <CardActionArea style={{ display: "flex", height: "200px" }}>
           <CardMedia

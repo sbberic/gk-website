@@ -8,6 +8,14 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0px;
   }
 `;
+
+export const Section = styled.div`
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+`;
+
 export const TextImage = styled.div`
   display: flex;
   background-image: ${(props) => `url('${props.img}')`};
@@ -20,7 +28,7 @@ export const TextImage = styled.div`
 
 export const BannerImage = styled(TextImage)`
   width: 100%;
-  height: 400px;
+  height: 600px;
   font-size: 40px;
 `;
 
@@ -66,12 +74,15 @@ export const ImageTypography = styled(Typography)`
 export const SectionHeader = styled(Typography)`
   ${({ theme }) => `
     && {
-      margin: ${theme.spacing() * 5}px 0px;
+      margin: ${theme.spacing() * 8}px 0px ${theme.spacing() * 2}px;
+      color: ${theme.palette.primary.main};
+      font-weight: 600;
     }
   `}
 `;
 export const FlipImageContainer = styled.div`
   flex: 1;
+  margin: 5px;
   height: 100%;
   position: relative;
   &:hover {

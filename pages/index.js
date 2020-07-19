@@ -5,12 +5,13 @@ import {
 import Head from "next/head";
 import React from "react";
 import { ThemeProvider } from "styled-components";
-import FlipImage from "../components/FlipImage";
+import MindsetCard from "../components/MindsetCard";
 import ProgramCard from "../components/ProgramCard";
 import {
   BannerImage,
   GlobalStyle,
   ImageTypography,
+  Section,
   SectionHeader,
 } from "../components/styles";
 import Testimonial from "../components/Testimonial";
@@ -41,7 +42,7 @@ export default function Home() {
       <MuiThemeProvider theme={theme}>
         <ThemeProvider theme={theme}>
           <Head>
-            <title>Create Next App</title>
+            <title>GK Education</title>
             <link rel="icon" href="/favicon.ico" />
           </Head>
           <Navbar />
@@ -52,37 +53,35 @@ export default function Home() {
               Through exploring the world
             </ImageTypography>
           </BannerImage>
-          <SectionHeader variant="h3" align="center">
-            Reinventing the Learning Experience
+          <SectionHeader variant="h4" align="center">
+            Reinventing the learning experience
           </SectionHeader>
-          <div style={{ height: "300px", width: "100%", display: "flex" }}>
+          <Section style={{ height: "300px" }}>
             {mindset.map((m) => (
-              <FlipImage
+              <MindsetCard
                 key={m.title}
-                image={m.img}
-                frontText={
-                  <ImageTypography variant="h4">{m.title}</ImageTypography>
-                }
-                backText={m.description}
-              ></FlipImage>
+                title={m.title}
+                img={m.img}
+                description={m.description}
+              />
             ))}
-          </div>
-          <SectionHeader variant="h3" align="center">
+          </Section>
+          <SectionHeader variant="h4" align="center">
             Featured Programs
           </SectionHeader>
-          <div style={{ width: "100%", display: "flex", flexWrap: "wrap" }}>
+          <Section>
             {programs.map((p) => (
               <ProgramCard key={p.title} {...p}></ProgramCard>
             ))}
-          </div>
-          <SectionHeader variant="h3" align="center">
+          </Section>
+          <SectionHeader variant="h4" align="center">
             Customer Feedback
           </SectionHeader>
-          <div style={{ width: "100%", display: "flex", flexWrap: "wrap" }}>
+          <Section>
             {feedbacks.map((p) => (
               <Testimonial key={p.title} {...p}></Testimonial>
             ))}
-          </div>
+          </Section>
         </ThemeProvider>
       </MuiThemeProvider>
     </div>

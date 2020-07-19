@@ -78,35 +78,35 @@ export const menus = [
 
 export const programs = [
   {
-    img: "/banner.jpg",
+    img: "/nz.png",
     title: "New Zealand",
     description: "Explore New Zealand with Kiwi study buddies",
   },
   {
-    img: "/banner.jpg",
+    img: "/bgsa.jpg",
     title: "United Kingdom",
     description:
       "Outdoor experience with Bear Grylls Survival Academy in the UK",
   },
   {
-    img: "/banner.jpg",
+    img: "/dh.png",
     title: "Dunhuang",
     description:
       "Explore the crossroads where great ancient cultures met in Dunhuang",
   },
   {
-    img: "/banner.jpg",
+    img: "/wp.jpg",
     title: "West Point",
     description: "Enhancing global leadership on the grounds of West Point",
   },
   {
-    img: "/banner.jpg",
+    img: "/cmx.jpg",
     title: "Chiang Mai",
     description:
       "Explore Chiang Mai while strengthening the parent-child relationship",
   },
   {
-    img: "/banner.jpg",
+    img: "/cambridge.png",
     title: "Cambridge",
     description: "Customized Executive Training at Cambraidge Univeristy",
   },
@@ -114,23 +114,23 @@ export const programs = [
 
 export const mindset = [
   {
-    img: "/banner.jpg",
+    img: "/environment.jpg",
     title: "Environment",
     description: "Combining classroom and experiential learning",
   },
   {
-    img: "/banner.jpg",
+    img: "/classmates.jpg",
     title: "Classmates",
     description: "Meet people from diverse backgrounds and cultures",
   },
   {
-    img: "/banner.jpg",
+    img: "/goal.jpg",
     title: "Goal",
     description:
       "Curriculum that emphasizes growth mindset, problem solving and impact",
   },
   {
-    img: "/banner.jpg",
+    img: "/experience.jpg",
     title: "Experience",
     description:
       "Immerse in real world activities, discussions and reflections",
