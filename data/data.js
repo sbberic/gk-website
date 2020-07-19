@@ -50,15 +50,15 @@ export const menus = [
       },
       {
         label: "United Kingdom",
-        href: "/k12/uk",
+        href: "/camp/uk",
       },
       {
         label: "Malaysia",
-        href: "/k12/mys",
+        href: "/camp/mys",
       },
       {
         label: "Dunhuang",
-        href: "/k12/dh",
+        href: "/camp/dh",
       },
     ],
   },
