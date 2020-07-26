@@ -1,4 +1,5 @@
 import React from "react";
+import ContactForm from "../components/ContactForm";
 import FlipImage from "../components/FlipImage";
 import PageLayout from "../components/PageLayout";
 import ProgramCard from "../components/ProgramCard";
@@ -52,6 +53,13 @@ export default function Home() {
           <Testimonial key={p.title} {...p}></Testimonial>
         ))}
       </Section>
+      <SectionHeader variant="h4" align="center">
+        Wonderful Moments
+      </SectionHeader>
+      <Section>
+        <img src="/moments.png" width="100%" />
+      </Section>
+      <ContactForm />
     </PageLayout>
   );
 }

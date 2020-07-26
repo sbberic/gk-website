@@ -1,9 +1,5 @@
 export const menus = [
   {
-    label: "Home",
-    href: "/",
-  },
-  {
     label: "Global K12 Immersion",
     children: [
       {

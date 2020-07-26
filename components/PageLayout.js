@@ -1,3 +1,4 @@
+import { Divider } from "@material-ui/core";
 import {
   createMuiTheme,
   ThemeProvider as MuiThemeProvider,
@@ -7,6 +8,7 @@ import React from "react";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyle } from "../components/styles";
 import Navbar from "./../components/Navbar";
+import Footer from "./Footer";
 
 const theme = createMuiTheme({
   palette: {
@@ -17,10 +19,10 @@ const theme = createMuiTheme({
       contrastText: "#fff",
     },
     secondary: {
-      light: "#ff6659",
-      main: "#d32f2f",
-      dark: "#9a0007",
-      contrastText: "#ffffff",
+      light: "#fff",
+      main: "#fff",
+      dark: "#fff",
+      contrastText: "#000",
     },
   },
 });
@@ -37,6 +39,8 @@ export default function PageLayout({ children, title }) {
           </Head>
           <Navbar />
           {children}
+          <Divider />
+          <Footer />
         </ThemeProvider>
       </MuiThemeProvider>
     </div>

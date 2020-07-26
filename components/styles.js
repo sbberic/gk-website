@@ -18,7 +18,7 @@ export const TextImage = styled.div`
   display: flex;
   background-image: ${(props) => `url('${props.img}')`};
   background-size: cover;
-  background-position-y: center;
+  background-position: center;
 
   align-items: center;
   justify-content: center;
@@ -129,6 +129,9 @@ export const TourImage = styled(BannerImage)`
 
 export const TourContainer = styled.div`
   padding: 20px;
+  .thumbs {
+    text-align: center;
+  }
 `;
 
 export const TourBannerTypography = styled(Typography)`
@@ -145,7 +148,6 @@ export const SectionHeader = styled(Typography)`
     && {
       margin: ${theme.spacing() * 8}px 0px ${theme.spacing() * 2}px;
       color: ${theme.palette.primary.main};
-      font-weight: 600;
     }
   `}
 `;
@@ -185,6 +187,21 @@ export const LinkButton = styled(Button)`
     color: white;
     a {
       text-decoration: none;
+      color: white;
+    }
+  }
+`;
+
+export const ContactUsContainer = styled.div`
+  && {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: ${({ theme }) => theme.palette.primary.main};
+    color: white;
+    h4 {
+      text-align: center;
+    }
+    .MuiInputBase-input {
       color: white;
     }
   }

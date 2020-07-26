@@ -1,6 +1,5 @@
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
 import Link from "next/link";
 import React, { useState } from "react";
 import { menus } from "../data/data";
@@ -13,9 +12,14 @@ function Navbar() {
   return (
     <AppBar position="fixed">
       <Toolbar>
-        <Typography variant="h6" noWrap>
-          GK Education
-        </Typography>
+        <Link href="/">
+          <img
+            src="/logo-only.png"
+            height="60px"
+            style={{ cursor: "pointer" }}
+          ></img>
+        </Link>
+
         <div style={{ flex: 1 }} />
         {menus.map((m) => {
           if (m.href)

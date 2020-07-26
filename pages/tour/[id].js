@@ -10,6 +10,7 @@ import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
 import React from "react";
 import { Carousel } from "react-responsive-carousel";
+import ContactForm from "../../components/ContactForm";
 import PageLayout from "../../components/PageLayout";
 import {
   ProgramHighlight,
@@ -20,20 +21,27 @@ import {
 } from "../../components/styles";
 import { tourPaths, tourProps } from "../../data/data";
 
-export default function Tour(props) {
+export default function Tour({
+  bannerImg,
+  title,
+  subtitle,
+  highlights = [],
+  sampleSchedule = [],
+  id = "",
+}) {
   return (
     <PageLayout>
-      <TourImage img={props.bannerImg} height={500}>
+      <TourImage img={bannerImg} height={500}>
         <TourBannerTypography variant="h2" fontWeight="fontWeightBold">
-          {props.title}
+          {title}
           <br></br>
-          {props.subtitle}
+          {subtitle}
         </TourBannerTypography>
       </TourImage>
       <TourContainer>
         <ProgramHighlight variant="outlined">
           <List component="nav" aria-label="highlights" style={{ flex: 2 }}>
-            {props.highlights.map((h) => (
+            {highlights.map((h) => (
               <ListItem button key={h}>
                 <ListItemIcon>
                   <ArrowForwardIosIcon />
@@ -54,7 +62,7 @@ export default function Tour(props) {
               aria-label="sample-schedule"
               style={{ flex: 2 }}
             >
-              {props.sampleSchedule.map((s) => (
+              {sampleSchedule.map((s) => (
                 <ListItem key={s.label}>
                   <ListItemIcon>
                     <Badge>{s.label}</Badge>
@@ -89,7 +97,7 @@ export default function Tour(props) {
                       alignItems: "center",
                     }}
                   >
-                    <img src={`/tour/${props.id}/${key}.jpg`} />
+                    <img src={`/tour/${id}/${key}.jpg`} />
                   </div>
                 );
               })}
@@ -97,6 +105,7 @@ export default function Tour(props) {
           </div>
         </div>
       </TourContainer>
+      <ContactForm />
     </PageLayout>
   );
 }
