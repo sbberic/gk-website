@@ -7,6 +7,7 @@ import {
 } from "@material-ui/core";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import React from "react";
+import ContactForm from "../components/ContactForm";
 import PageLayout from "../components/PageLayout";
 import {
   AboutUsSection,
@@ -192,6 +193,7 @@ export default function AboutUs() {
           {teamMembers.map((t) => teamMember(t))}
         </AboutUsSection>
       </div>
+      <ContactForm />
     </PageLayout>
   );
 }

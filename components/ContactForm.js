@@ -22,7 +22,7 @@ function ContactForm() {
         <TextField
           color="secondary"
           margin="normal"
-          variant="outlined"
+          variant="filled"
           fullWidth
           label="Name"
           value={name}
@@ -31,7 +31,7 @@ function ContactForm() {
         <TextField
           color="secondary"
           margin="normal"
-          variant="outlined"
+          variant="filled"
           fullWidth
           label="Email"
           value={email}
@@ -40,7 +40,7 @@ function ContactForm() {
         <TextField
           color="secondary"
           margin="normal"
-          variant="outlined"
+          variant="filled"
           label="Message"
           value={message}
           onChange={(e) => setMessage(e.currentTarget.value)}
