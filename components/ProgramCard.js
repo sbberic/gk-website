@@ -11,13 +11,17 @@ function ProgramCard({ img = "", title = "", description = "", href = "" }) {
   return (
     <Card style={{ minWidth: 400, flex: 1, margin: 10 }} elevation={5}>
       <Link href={href} passHref>
-        <CardActionArea style={{ display: "flex", height: "200px" }}>
+        <CardActionArea>
           <CardMedia
             image={img}
             title={title}
-            style={{ flex: 1, height: "200px" }}
+            style={{
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              height: "300px",
+            }}
           />
-          <CardContent style={{ flex: 1 }}>
+          <CardContent>
             <Typography gutterBottom variant="h5" component="h2">
               {title}
             </Typography>

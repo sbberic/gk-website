@@ -50,7 +50,7 @@ export default function Tour({
               </ListItem>
             ))}
           </List>
-          <Typography variant="h2" style={{ flex: 1 }}>
+          <Typography variant="h3" style={{ flex: 1 }}>
             Program Highlights
           </Typography>
         </ProgramHighlight>
@@ -63,7 +63,10 @@ export default function Tour({
               style={{ flex: 2 }}
             >
               {sampleSchedule.map((s) => (
-                <ListItem key={s.label}>
+                <ListItem
+                  key={s.label}
+                  style={{ paddingBottom: 0, paddingTop: 0 }}
+                >
                   <ListItemIcon>
                     <Badge>{s.label}</Badge>
                   </ListItemIcon>
@@ -72,7 +75,11 @@ export default function Tour({
                     aria-label={`sample-schedule-${s.label}`}
                   >
                     {s.items.map((item) => (
-                      <ListItem button key={item}>
+                      <ListItem
+                        button
+                        key={item}
+                        style={{ paddingBottom: 0, paddingTop: 0 }}
+                      >
                         <ListItemIcon>
                           <FiberManualRecordIcon />
                         </ListItemIcon>

@@ -48,7 +48,7 @@ function ContactForm() {
           rows={6}
           fullWidth
         ></TextField>
-        <Button color="secondary" variant="outlined" size="large">
+        <Button variant="outlined" size="large">
           Send
         </Button>
       </div>

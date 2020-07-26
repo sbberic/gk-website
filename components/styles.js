@@ -1,5 +1,5 @@
 import { Button, MenuItem, Typography } from "@material-ui/core";
-import { darken } from "@material-ui/core/styles";
+import { darken, hexToRgb, lighten } from "@material-ui/core/styles";
 import styled, { createGlobalStyle } from "styled-components";
 export const GlobalStyle = createGlobalStyle`
   body {
@@ -47,14 +47,13 @@ export const BackSide = styled.div`
   width: 100%;
   top: 0;
   left: 0;
-  background-color: white;
   backface-visibility: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   ${({ theme }) => `
-    background-color: ${theme.palette.primary.main};
-    color: white;
+    background-color: ${lighten(theme.palette.primary.main, 0.5)};
+    color: black;
   `}
   div {
     text-align: center;
@@ -72,12 +71,13 @@ export const ImageTypography = styled(Typography)`
 
 export const ProgramHighlight = styled.div`
   && {
-    color: white;
     display: flex;
     align-items: center;
     background-color: ${({ theme }) => theme.palette.primary.main};
-    h2 {
-      padding: 20px;
+    h3 {
+      font-weight: 300;
+      color: white;
+      flex: none;
       text-align: center;
     }
     nav {
@@ -121,7 +121,11 @@ export const TourImage = styled(BannerImage)`
   background: linear-gradient(
         to bottom left,
         transparent 65%,
-        ${({ theme }) => theme.palette.primary.main} 25%
+        ${({ theme }) => {
+            const rgb = hexToRgb(theme.palette.primary.main);
+            return `${rgb.slice(0, rgb.length - 1)}, 0.5)`;
+          }}
+          25%
       )
       no-repeat,
     ${(props) => `url('${props.img}')`} center/cover;
@@ -196,13 +200,14 @@ export const ContactUsContainer = styled.div`
   && {
     margin: 20px 0;
     padding: 20px;
-    background-color: ${({ theme }) => theme.palette.primary.main};
-    color: white;
+    background-color: ${({ theme }) =>
+      lighten(theme.palette.primary.main, 0.5)};
+    color: black;
     h4 {
       text-align: center;
     }
     .MuiInputBase-input {
-      color: white;
+      color: black;
     }
   }
 `;
