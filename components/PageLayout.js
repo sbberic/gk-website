@@ -27,7 +27,7 @@ const theme = createMuiTheme({
 
 export default function PageLayout({ children, title }) {
   return (
-    <div className="container">
+    <div className="container" style={{ paddingTop: 64 }}>
       <GlobalStyle />
       <MuiThemeProvider theme={theme}>
         <ThemeProvider theme={theme}>

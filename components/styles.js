@@ -1,7 +1,5 @@
-import Button from "@material-ui/core/Button";
-import MenuItem from "@material-ui/core/MenuItem";
+import { Button, MenuItem, Typography } from "@material-ui/core";
 import { darken } from "@material-ui/core/styles";
-import Typography from "@material-ui/core/Typography";
 import styled, { createGlobalStyle } from "styled-components";
 export const GlobalStyle = createGlobalStyle`
   body {
@@ -28,8 +26,9 @@ export const TextImage = styled.div`
 
 export const BannerImage = styled(TextImage)`
   width: 100%;
-  height: 600px;
+  height: ${(props) => props.height || 600}px;
   font-size: 40px;
+  position: relative;
 `;
 
 export const FrontImage = styled(TextImage)`
@@ -69,6 +68,76 @@ export const ImageTypography = styled(Typography)`
   text-align: center;
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.6);
+`;
+
+export const ProgramHighlight = styled.div`
+  && {
+    color: white;
+    display: flex;
+    align-items: center;
+    background-color: ${({ theme }) => theme.palette.primary.main};
+    h2 {
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background-color: white;
+      color: black;
+      border-radius: 10px;
+    }
+    border: 2px solid ${({ theme }) => theme.palette.primary.main};
+    border-radius: 10px;
+  }
+`;
+
+export const SampleSchedule = styled.div`
+  && {
+    height: 600px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+    background-color: ${({ theme }) => theme.palette.primary.main};
+    border: 2px solid ${({ theme }) => theme.palette.primary.main};
+    border-radius: 10px;
+    padding: 20px;
+    h3 {
+      font-weight: 300;
+      color: white;
+      flex: none;
+      margin-bottom: 20px;
+    }
+    nav {
+      background-color: white;
+      color: black;
+      border-radius: 10px;
+      flex: 1;
+      overflow: scroll;
+    }
+  }
+`;
+
+export const TourImage = styled(BannerImage)`
+  background: linear-gradient(
+        to bottom left,
+        transparent 65%,
+        ${({ theme }) => theme.palette.primary.main} 25%
+      )
+      no-repeat,
+    ${(props) => `url('${props.img}')`} center/cover;
+`;
+
+export const TourContainer = styled.div`
+  padding: 20px;
+`;
+
+export const TourBannerTypography = styled(Typography)`
+  color: white;
+  font-weight: 400 !important;
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  width: 50%;
 `;
 
 export const SectionHeader = styled(Typography)`

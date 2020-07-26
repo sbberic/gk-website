@@ -1,5 +1,5 @@
 import React from "react";
-import MindsetCard from "../components/MindsetCard";
+import FlipImage from "../components/FlipImage";
 import PageLayout from "../components/PageLayout";
 import ProgramCard from "../components/ProgramCard";
 import {
@@ -26,12 +26,14 @@ export default function Home() {
       </SectionHeader>
       <Section style={{ height: "300px" }}>
         {mindset.map((m) => (
-          <MindsetCard
+          <FlipImage
             key={m.title}
-            title={m.title}
-            img={m.img}
-            description={m.description}
-          />
+            image={m.img}
+            frontText={
+              <ImageTypography variant="h4">{m.title}</ImageTypography>
+            }
+            backText={m.description}
+          ></FlipImage>
         ))}
       </Section>
       <SectionHeader variant="h4" align="center">
