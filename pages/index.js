@@ -1,3 +1,4 @@
+import { Typography } from "@material-ui/core";
 import React from "react";
 import ContactForm from "../components/ContactForm";
 import FlipImage from "../components/FlipImage";
@@ -16,11 +17,28 @@ export default function Home() {
   return (
     <PageLayout title="Home">
       <BannerImage img="/banner.jpg">
-        <ImageTypography variant="h2">
-          Realize your potential
-          <br></br>
-          Through exploring the world
-        </ImageTypography>
+        <div
+          style={{
+            position: "absolute",
+            left: "40px",
+            top: "40px",
+          }}
+        >
+          <ImageTypography variant="h2">Discover yourself</ImageTypography>
+          <ImageTypography variant="h2">Through exploring</ImageTypography>
+          <ImageTypography variant="h2">the world</ImageTypography>
+        </div>
+        <div
+          style={{
+            position: "absolute",
+            left: "40px",
+            bottom: "40px",
+          }}
+        >
+          <ImageTypography variant="h2" style={{ fontSize: 40 }}>
+            GK Education
+          </ImageTypography>
+        </div>
       </BannerImage>
       <SectionHeader variant="h4" align="center">
         Reinventing the learning experience
@@ -30,9 +48,7 @@ export default function Home() {
           <FlipImage
             key={m.title}
             image={m.img}
-            frontText={
-              <ImageTypography variant="h4">{m.title}</ImageTypography>
-            }
+            frontText={<Typography variant="h4">{m.title}</Typography>}
             backText={m.description}
           ></FlipImage>
         ))}

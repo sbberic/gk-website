@@ -32,11 +32,21 @@ export default function Tour({
   return (
     <PageLayout>
       <TourImage img={bannerImg} height={500}>
-        <TourBannerTypography variant="h2" fontWeight="fontWeightBold">
-          {title}
-          <br></br>
-          {subtitle}
-        </TourBannerTypography>
+        <div
+          style={{
+            position: "absolute",
+            bottom: "40px",
+            left: "40px",
+            width: "50%",
+          }}
+        >
+          <TourBannerTypography variant="h2" fontWeight="fontWeightBold">
+            {title}
+          </TourBannerTypography>
+          <TourBannerTypography variant="h2" fontWeight="fontWeightBold">
+            {subtitle}
+          </TourBannerTypography>
+        </div>
       </TourImage>
       <TourContainer>
         <ProgramHighlight variant="outlined">

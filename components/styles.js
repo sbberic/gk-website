@@ -38,8 +38,13 @@ export const FrontImage = styled(TextImage)`
   backface-visibility: hidden;
   font-size: 30px;
   font-weight: 600;
+  h4 {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+  }
 `;
 export const BackSide = styled.div`
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   transition: transform 0.3s linear;
   transform: rotateY(180deg);
   height: 100%;
@@ -64,9 +69,15 @@ export const BackSide = styled.div`
 `;
 
 export const ImageTypography = styled(Typography)`
-  text-align: center;
-  padding: 20px;
-  background-color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  && {
+    font-size: 60px;
+    font-weight: 600;
+    padding: 5px;
+  }
+  background: linear-gradient(to bottom, white 50%, #ddd1d3 50%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 `;
 
 export const ProgramHighlight = styled.div`
@@ -140,11 +151,15 @@ export const TourContainer = styled.div`
 
 export const TourBannerTypography = styled(Typography)`
   color: white;
-  font-weight: 400 !important;
-  position: absolute;
-  bottom: 40px;
-  left: 40px;
-  width: 50%;
+  text-transform: uppercase;
+  && {
+    font-size: 50px;
+    font-weight: 600;
+    padding: 5px;
+  }
+  background: linear-gradient(to bottom, white 50%, #ddd1d3 50%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 `;
 
 export const SectionHeader = styled(Typography)`
@@ -209,5 +224,87 @@ export const ContactUsContainer = styled.div`
     .MuiInputBase-input {
       color: black;
     }
+  }
+`;
+export const AboutUsSectionTitle = styled.div`
+  background-color: ${({ theme }) => theme.palette.primary.main};
+  display: grid;
+  place-items: center;
+  height: 200px;
+  h3 {
+    color: white;
+    font-size: 60px;
+  }
+`;
+export const AboutUsSection = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  .left,
+  .right {
+    flex: 1;
+    display: grid;
+    place-items: center;
+    background-color: #ffcc73;
+    .text {
+      width: 70%;
+    }
+  }
+`;
+
+export const MapContainer = styled.div`
+  margin: 0px 40px;
+  display: grid;
+  place-items: center;
+  position: relative;
+  img {
+    width: 90%;
+  }
+  p {
+    padding: 20px;
+    width: 50%;
+    position: absolute;
+    bottom: 10%;
+    left: 15%;
+    background-color: ${({ theme }) => {
+      const rgb = hexToRgb(theme.palette.primary.main);
+      return `${rgb.slice(0, rgb.length - 1)}, 0.5)`;
+    }};
+  }
+`;
+
+export const DiffBlock = styled.div`
+  background-color: ${(props) => props.backgroundColor};
+  width: 50%;
+  flex: none;
+  color: white;
+  display: flex;
+  img {
+    width: 40%;
+  }
+  h5 {
+    width: 60%;
+    color: white;
+    display: grid;
+    place-items: center;
+    padding: 0 60px;
+  }
+`;
+
+export const TeamMember = styled.div`
+  display: grid;
+  place-items: center;
+  flex: 1;
+  .image {
+    height: 300px;
+    width: 300px;
+    background-image: url(${(props) => props.img});
+    border-radius: 50%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 2px solid ${({ theme }) => theme.palette.primary.main};
+  }
+  h4 {
+    margin-top: 20px;
   }
 `;

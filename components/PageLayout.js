@@ -39,7 +39,7 @@ export default function PageLayout({ children, title }) {
           </Head>
           <Navbar />
           {children}
-          <Divider />
+          <Divider style={{ marginTop: 20 }} />
           <Footer />
         </ThemeProvider>
       </MuiThemeProvider>
